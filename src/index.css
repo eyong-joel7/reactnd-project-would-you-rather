@@ -57,10 +57,10 @@ a {
   font-weight: 700;
   border-width: 2px;
 }
-.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
+MuiOutlinedInput-input{
   padding: 10px;
 }
-.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+MuiInputLabel-root {
   padding-left: 10px !important;
 }
 .center {
@@ -473,4 +473,11 @@ width: 30%;
   font-size: 22px;
   text-align: center;
 
+}
+
+.select{
+ padding:10px !important;
+}
+.input-label{
+  top: -10px !important;
 }

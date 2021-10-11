@@ -50,16 +50,18 @@ import { connect } from "react-redux";
             type="text"
             placeholder="Enter your name"
             required
+            style = {{marginBottom: '20px'}}
             value={name}
             onChange={({ target: { value } }) =>
               this.setState((prevState) => ({ ...prevState, name: value }))
             }
           />
-          <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <FormControl className = 'input-label' sx={{ m: 1, minWidth: 120 }}>
             <InputLabel id="signin">Choose your avatar</InputLabel>
             <Select
               labelId="signin"
               id="select name"
+              className = 'select'
               value={this.state.avatarURL}
               label="user"
               onChange={this.handleChange}

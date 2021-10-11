@@ -7,6 +7,9 @@ import { connect } from "react-redux";
 import { signIn } from "../actions/authedUser";
 import { Link,Redirect } from "react-router-dom";
 
+
+
+
 class SignIn extends Component {
   state = {
     name: "",
@@ -22,12 +25,11 @@ class SignIn extends Component {
     const user = users[selectedUserKey];
     if (user) {
       this.props.dispatch(signIn(user.id));
-      console.log(redirect)
       if(redirect) this.props.history.push(`${redirect.trim()}`) 
       else return this.props.history.push('/') 
     }
   };
-  
+
   handleChange = (event) => {
     this.setState(() => ({
       name: event.target.value,
@@ -53,8 +55,10 @@ if(authedUser) return <Redirect to = '/' />
 
             >
               <FormControl sx={{ m: 1, minWidth: 120}}>
-                <InputLabel id="signin">Select user</InputLabel>
+                <InputLabel className = 'input-label' sx = {{p: 1}} id="signin">Select user</InputLabel>
                 <Select
+                className  = 'select'
+               
                   labelId="signin"
                   id="select name"
                   value={this.state.name}
