@@ -12,15 +12,15 @@ class PollDetails extends Component {
 
     const { users, authedUser } = this.props;
 
-    if (question) {
-      const isAnswered = Object.keys(users[authedUser].answers).find(
+    if (question && authedUser) {
+      const isAnswered = users[authedUser]?.answers && Object.keys(users[authedUser].answers).find(
         (key) => key === id
       );
       const {optionOne, optionTwo, author} = question;
 
       const authorKey = Object.keys(users).find((key) => author === key);
       const { name, avatarURL } = users[authorKey];
-      const userResponse = users[authedUser].answers[isAnswered];
+      const userResponse = isAnswered && users[authedUser].answers[isAnswered];
 
       return (
         <div className = 'list-card' style = {{border:'none'}}>

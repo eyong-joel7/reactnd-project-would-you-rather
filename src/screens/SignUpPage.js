@@ -4,7 +4,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { handleSignUp } from "../actions/users";
 import { connect } from "react-redux";
 
@@ -33,6 +33,8 @@ import { connect } from "react-redux";
     }));
   };
   render() {
+    const {authedUser}  = this.props
+    if(authedUser) return <Redirect to = '/' />
     const { name } = this.state;
     return (
       <div className="new-card">
@@ -78,5 +80,10 @@ import { connect } from "react-redux";
     );
   }
 }
+function mapStateToProps({authedUser}){
+  return {
+    authedUser
+  }
+}
 
-export default connect()(SignUpPage)
+export default connect(mapStateToProps)(SignUpPage)

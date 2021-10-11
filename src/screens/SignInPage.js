@@ -13,6 +13,7 @@ class SignIn extends Component {
   };
 
   handleSubmit = (event) => {
+    const redirect  = this.props.history.location.search?.split('=')[1];
     event.preventDefault();
     const users = this.props.users;
     const selectedUserKey = Object.keys(users).find(
@@ -21,10 +22,12 @@ class SignIn extends Component {
     const user = users[selectedUserKey];
     if (user) {
       this.props.dispatch(signIn(user.id));
-      this.props.history.push('/')
+      console.log(redirect)
+      if(redirect) this.props.history.push(`${redirect.trim()}`) 
+      else return this.props.history.push('/') 
     }
   };
-
+  
   handleChange = (event) => {
     this.setState(() => ({
       name: event.target.value,
@@ -33,7 +36,6 @@ class SignIn extends Component {
   render() {
     const users = this.props.users;
     const {authedUser}  = this.props
-    console.log(authedUser)
 if(authedUser) return <Redirect to = '/' />
 
     return (

@@ -21,7 +21,7 @@ import { handleSaveQuestion } from '../actions/shared'
 
     }
     render() {
-        if(!this.props.authedUser) return <Redirect to  = '/login'/>
+        if (!this.props.authedUser) return <Redirect to="/login?redirect = add" />;
         const {optionTwoText, optionOneText} = this.state
         return (
             <div>

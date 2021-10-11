@@ -5,7 +5,7 @@ import LeaderCard from "../components/LeaderCard";
 
 class LeaderBoard extends Component {
   render() {
-    if (!this.props.authedUser) return <Redirect to="/login" />;
+    if (!this.props.authedUser) return <Redirect to="/login?redirect = leaderboard" />;
     const { users } = this.props;
     const sortedUserList = [];
     
