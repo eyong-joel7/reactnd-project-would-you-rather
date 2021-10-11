@@ -19,23 +19,29 @@ Next run, the following command in order to start the development server.
 ## Project Structure
 
 ├── README.md - Which is this file.
+
 ├── package.json  `npm package manager` file. It's unlikely that you'll need to modify this.
+
 ├── public
 │   ├── favicon.ico # React Icon, You may change if you wish.
 │   └── index.html # DO NOT MODIFY
 |    └── Images # This folder contain all the avatar images used in this project
+
 └── src
     ├── Index.js #This is the root of this application. It also holds our redux store.
     ├── App.js #This is the main view of the application. It holds the
     |         Navigation menu, cordinate routing to other components
     | 
     ├── Index.css # This file contains all styling in the application
+
     └── Actions    # This Folder houses all of our action creators logic
         ├── authedUser.js  # Action for athenticating a user
          ├── question.js # Actions and Actions creator to handle all dispatches
             to the question piece of our store
          ├── users.js # Houses actions and creators for handling operation involving the users piece to our store
-         ├── Shared.js # Contain functionality actions shared between the users and question states of our store
+         ├── Shared.js # Contain functionality actions shared between the users 
+               and question states of our store
+
     └── components # This Folder contains all reusable React components and Views of the project
          ├── AnsweredQuestion.js  # This is a very simple view describing the right section of the Card for an Answered question detail plane as well the logic to submit answer or response to a that question
          ├── Card.js # This is a HOC for Majority of the views in the project - 
@@ -47,6 +53,7 @@ Next run, the following command in order to start the development server.
                  Every   question is dynamically render inside an instance of this component
          └── PollDetail.js #As you already guessed it, details about a question is deplayed in this component. This component is a parent component - reusing the Card.js components, as well as the UnAnswered and Answered component
          └── UnAnswered.js # The name doesnt sound trivial as what this components does, well it is a simple component just like the Answered.js compoenent. Now you get it, it simply describe the right hand section of the Polldetail.js component for answered questions functionality
+
     └── Middleware # This Folder  contains our middleware files
          ├── logger.js  # Middleware responsible for giving us a view into what redux is 
               doing behind the scene
