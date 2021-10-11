@@ -51,12 +51,7 @@ class PollList extends Component {
 
     const { answered_questions, unAnswered_questions } =
       this.getGroupedQuestions(answers_keys, questions_keys, questions);
-      console.log(answered_questions, unAnswered_questions)
-//  const sorted_answered_questions = [];
-//  const sorted_unAnswered_questions = [];
-//  for(let q in answered_questions){
-//    sorted_answered_questions.push(answered_questions[q])
-//  }
+
     const activeClass = this.state.activeClass;
     return (
       <div className="list-card">
