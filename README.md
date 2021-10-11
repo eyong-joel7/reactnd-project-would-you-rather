@@ -24,11 +24,13 @@ Next run, the following command in order to start the development server.
 ├── package.json  `npm package manager` file. It's unlikely that you'll need to modify this.
 
 ├── public
+
     ├── favicon.ico # React Icon, You may change if you wish.
     └── index.html # DO NOT MODIFY
     └── Images # This folder contain all the avatar images used in this project
 
 └── src
+
     ├── Index.js #This is the root of this application. It also holds our redux store.
 
     ├── App.js #This is the main view of the application. It holds the
