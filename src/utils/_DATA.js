@@ -2,7 +2,7 @@ let users = {
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
-    avatarURL: ,
+    avatarURL: '/images/avatar1.jpg',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -14,7 +14,7 @@ let users = {
   tylermcginnis: {
     id: 'tylermcginnis',
     name: 'Tyler McGinnis',
-    avatarURL: ,
+    avatarURL:'/images/avatar4.jpg' ,
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -24,7 +24,7 @@ let users = {
   johndoe: {
     id: 'johndoe',
     name: 'John Doe',
-    avatarURL: ,
+    avatarURL: '/images/avatar3.jpg',
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
@@ -145,6 +145,34 @@ function formatQuestion ({ optionOneText, optionTwoText, author }) {
       text: optionTwoText,
     }
   }
+}
+function capitalizeName(name){
+  return name.replace(/(^\w|\s\w)/g, m => m.toUpperCase());
+}
+
+function formatUser({name, avatarURL}){
+  const id = name.toLowerCase().replace(' ', '');
+  return {
+    answers:{},
+    avatarURL,
+    id,
+    name: capitalizeName(name),
+    questions:[]
+  }
+}
+
+
+export function _createAccount(info){
+  return new Promise((res, rej) => {
+const formattedUser = formatUser(info);
+setTimeout(()=> {
+  users = {
+    ...users,
+    [formattedUser.id]:formattedUser
+  }
+  res(formattedUser)
+},500)
+  })
 }
 
 export function _saveQuestion (question) {
