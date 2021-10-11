@@ -27,19 +27,21 @@ Next run, the following command in order to start the development server.
     ├── favicon.ico # React Icon, You may change if you wish.
     └── index.html # DO NOT MODIFY
     └── Images # This folder contain all the avatar images used in this project
-    
+
 └── src
     ├── Index.js #This is the root of this application. It also holds our redux store.
+
     ├── App.js #This is the main view of the application. It holds the
-    |         Navigation menu, cordinate routing to other components
-    | 
+           Navigation menu, cordinate routing to other components
+    
     ├── Index.css # This file contains all styling in the application
 
     └── Actions    # This Folder houses all of our action creators logic
-        ├── authedUser.js  # Action for athenticating a user
+         ├── authedUser.js  # Action for athenticating a user
          ├── question.js # Actions and Actions creator to handle all dispatches
             to the question piece of our store
-         ├── users.js # Houses actions and creators for handling operation involving the users piece to our store
+         ├── users.js # Houses actions and creators for handling operation
+               involving the users piece to our store
          ├── Shared.js # Contain functionality actions shared between the users 
                and question states of our store
 
