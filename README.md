@@ -11,7 +11,7 @@ In the project directory, you can run:
 
 Next run, the following command in order to start the development server. 
 
-2. ## `npm run`
+2. ## `npm start`
 
 3. At this point you should be able to access the development server at pen [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
@@ -58,6 +58,7 @@ Next run, the following command in order to start the development server.
                  Every   question is dynamically render inside an instance of this component
          └── PollDetail.js #As you already guessed it, details about a question is deplayed in this component. This component is a parent component - reusing the Card.js components, as well as the UnAnswered and Answered component
          └── UnAnswered.js # The name doesnt sound trivial as what this components does, well it is a simple component just like the Answered.js compoenent. Now you get it, it simply describe the right hand section of the Polldetail.js component for answered questions functionality
+         └── ProtectedRoute.js # A higher order component handling all neccessary auth and redirecting to sign In page in case user isnt authenticated
 
     └── Middleware # This Folder  contains our middleware files
          ├── logger.js  # Middleware responsible for giving us a view into what redux is 
@@ -81,6 +82,9 @@ Next run, the following command in order to start the development server.
          ├── SignIn.js # UI for sign In as well logic for authenticating a user
          ├── SignUp.js # You are able to create a temporal 
             (limitation of our fake database 😊) user using your choice name and selecting one of the presented avatar url
+         ├── PollList.js #This component describe a list of all available pool questions  - 
+                    the answered and the unanswered question polls
+           
         
     └── Utils   # This Folder contains our fake database, as well as method to 
                 access and manupulate the database

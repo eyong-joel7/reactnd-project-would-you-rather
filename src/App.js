@@ -5,11 +5,12 @@ import {handleInitialData} from "./actions/shared";
 import SignIn from "./screens/SignInPage";
 import LoadingBar from "react-redux-loading";
 import Navbar from "./components/Navbar";
-import PollList from "./components/PollList";
+import PollList from "./screens/PollList";
 import PollDetails from "./components/PollDetails";
 import NewQuestion from "./screens/NewQuestion";
 import LeaderBoard from "./screens/LeaderBoard";
 import SignUpPage from "./screens/SignUpPage";
+import ProtectedRoute from "./components/ProtectedRoute";
 class App extends Component {
   componentDidMount() {
     this.props.dispatch(handleInitialData());
@@ -24,10 +25,10 @@ class App extends Component {
             <Navbar user = {user}/>
               <Fragment>
                 <Switch>
-                <Route path="/" exact component={PollList} />
-                <Route path = '/questions/:id' component = {PollDetails}/>
-                <Route path = '/add' component = {NewQuestion} />
-                <Route path  = '/leaderboard' component = {LeaderBoard} />
+                <ProtectedRoute path="/" exact component={PollList} />
+                <ProtectedRoute path = '/questions/:id' component = {PollDetails}/>
+                <ProtectedRoute path = '/add' component = {NewQuestion} />
+                <ProtectedRoute path  = '/leaderboard' component = {LeaderBoard} />
                 <Route path  = '/signup' component = {SignUpPage} />
                 <Route path = '/login' component = {SignIn} />
                 <Route component = {() => <div>Error:404 | Page not found</div>} />

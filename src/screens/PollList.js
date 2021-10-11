@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
-import Poll from "./Poll";
+import Poll from "../components/Poll";
 
 class PollList extends Component {
   state = {
@@ -40,7 +39,6 @@ class PollList extends Component {
   };
 
   render() {
-    if(!this.props.authedUser) return <Redirect to  = '/login'/>
     const {
       questions,
       answers,
@@ -88,7 +86,6 @@ function mapStateToProps({users, authedUser, questions }) {
   return {
     questions,
     answers,
-    authedUser,
   };
 }
 export default connect(mapStateToProps)(PollList);

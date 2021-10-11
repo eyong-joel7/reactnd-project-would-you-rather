@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
 import { handleSaveQuestion } from '../actions/shared'
 
  class NewQuestion extends Component {
@@ -21,7 +20,6 @@ import { handleSaveQuestion } from '../actions/shared'
 
     }
     render() {
-        if (!this.props.authedUser) return <Redirect to="/login?redirect = add" />;
         const {optionTwoText, optionOneText} = this.state
         return (
             <div>
@@ -48,9 +46,5 @@ import { handleSaveQuestion } from '../actions/shared'
         )
     }
 }
-function mapStateToProps({ authedUser}) {
-    return {
-      authedUser,
-    };
-  }
-export default connect(mapStateToProps)(NewQuestion)
+
+export default connect()(NewQuestion)

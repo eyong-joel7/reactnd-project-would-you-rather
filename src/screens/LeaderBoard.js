@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
 import LeaderCard from "../components/LeaderCard";
 
 class LeaderBoard extends Component {
   render() {
-    if (!this.props.authedUser) return <Redirect to="/login?redirect = leaderboard" />;
     const { users } = this.props;
     const sortedUserList = [];
     
@@ -37,10 +35,9 @@ class LeaderBoard extends Component {
   }
 }
 
-function mapStateToProps({ users, authedUser }) {
+function mapStateToProps({ users}) {
   return {
     users,
-    authedUser,
   };
 }
 

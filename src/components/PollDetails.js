@@ -6,8 +6,9 @@ import UnAnsweredQuestion from "./UnAnsweredQuestion";
 
 class PollDetails extends Component {
   render() {
-
+  
     const { id } = this.props.match.params;
+    // if (!this.props.authedUser) return <Redirect to ={`/login?redirect = questions/${id}`} />;
     const question = this.props.questions[id];
 
     const { users, authedUser } = this.props;
