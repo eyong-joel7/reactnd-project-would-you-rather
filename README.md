@@ -82,6 +82,6 @@ Next run, the following command in order to start the development server.
     
        
 ## Demo site Hosted on Netlify
-You can view the project hosted at https://myreadbyjoel.netlify.app/
+You can view the project hosted at https://would-you-rather-byjoel.netlify.app/
 
 
