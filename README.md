@@ -1,6 +1,6 @@
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) as as such launching this application on a local development server is straight forward and trivial 😊. Below highlight the available scripts to do so.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) as such, launching this application on a local development server is straight forward and trivial 😊. Below highlight the available scripts relevant to do so.
 
 ## Available Scripts
 
@@ -10,11 +10,10 @@ In the project directory, you can run:
 1. ###   `npm install`. This will download and install the npm packages (dependencies) used in this project
 
 Next run, the following command in order to start the development server. 
+
 2. ## `npm run`
 
-3. At this point you should be access the development server at pen [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-
+3. At this point you should be able to access the development server at pen [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
 ## Project Structure
@@ -24,13 +23,12 @@ Next run, the following command in order to start the development server.
 ├── public
 │   ├── favicon.ico # React Icon, You may change if you wish.
 │   └── index.html # DO NOT MODIFY
-    └── Images # This folder contain all the avatar images used in this project
-    
+|    └── Images # This folder contain all the avatar images used in this project
 └── src
     ├── Index.js #This is the root of this application. It also holds our redux store.
     ├── App.js #This is the main view of the application. It holds the
-             Navigation menu, cordinate routing to other components
-   
+    |         Navigation menu, cordinate routing to other components
+    | 
     ├── Index.css # This file contains all styling in the application
     └── Actions    # This Folder houses all of our action creators logic
         ├── authedUser.js  # Action for athenticating a user
