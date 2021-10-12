@@ -13,7 +13,7 @@ _name:'Image 1'
         _name:'Image 3'
     },
     {
-        _avatarURL:'/images/user4.png',
+        _avatarURL:'/images/user4.jpg',
         _name:'Image 4'
     },
 
